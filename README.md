@@ -2,7 +2,7 @@
 
 基于vue2.0和websocket的一个实时聊天小项目
 
-[项目地址](https://github.com/Yaer23/vue-chatroom)
+[项目地址]()
 
 ## 项目介绍
 
@@ -38,8 +38,8 @@
 
 ### 区分：
 
- - socket.emit() ：向建立**该连接**的客户端广播  
- - socket.broadcast.emit() ：向除去建立该连接的客户端的所有客户端广播(项目中，用于用户上下线提醒部分) 
+ - socket.emit() ：向建立**该连接**的客户端广播
+ - socket.broadcast.emit() ：向除去建立该连接的客户端的所有客户端广播(项目中，用于用户上下线提醒部分)
  - io.sockets.emit()/io.emit()：给所有client广播消息,包括当前socket本身（项目中用于消息的战士部分）
 
 ## How to run
