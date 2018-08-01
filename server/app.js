@@ -13,9 +13,9 @@ io.on('connection', function (socket) {
     // 广播当前在线人数
     io.emit('clientNum', clientCount);
 
-    socket.username = data
+    socket.username = data;
     // 给所有client广播消息（包括当前socket本身）
-    io.emit('online', data)
+    io.emit('online', data);
     console.log('user : ' + socket.username + ' connected!')
   })
 
@@ -29,13 +29,16 @@ io.on('connection', function (socket) {
   socket.on('disconnect', function () {
     // 当前用户减一
     clientCount--;
+    if(clientCount<=0){
+      clientCount=0;
+    }
     // 广播当前用户人数
     io.emit('clientNum', clientCount);
-      
+
     // 广播用户断开下线
     socket.broadcast.emit('offline', socket.username);
     console.log(socket.username + ' 下线了~')
-  }) 
+  })
 })
 
 console.log('listening at :' + PORT)
